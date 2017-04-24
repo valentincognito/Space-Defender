@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Space-Defender.CSharp", "Space-Defender.CSharp.csproj", "{89A4956E-8F6C-BAC2-F573-3CEE5D75BA2D}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Space-Defender", "Assembly-CSharp.csproj", "{D52FE786-DD09-7907-AA1C-27768FD7A724}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{89A4956E-8F6C-BAC2-F573-3CEE5D75BA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89A4956E-8F6C-BAC2-F573-3CEE5D75BA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89A4956E-8F6C-BAC2-F573-3CEE5D75BA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89A4956E-8F6C-BAC2-F573-3CEE5D75BA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52FE786-DD09-7907-AA1C-27768FD7A724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52FE786-DD09-7907-AA1C-27768FD7A724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52FE786-DD09-7907-AA1C-27768FD7A724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52FE786-DD09-7907-AA1C-27768FD7A724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
