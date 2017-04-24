@@ -21,9 +21,7 @@ public class EnemySpawner : MonoBehaviour {
 		Vector3 rightBoundary = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, distance));
 		xmin = leftBoundary.x;
 		xmax = rightBoundary.x;
-
-		print (xmin+" - "+xmax);
-        
+		        
 		foreach(Transform child in transform){
 			GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
 			enemy.transform.parent = child;
