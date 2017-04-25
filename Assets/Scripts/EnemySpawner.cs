@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour {
 	public float width = 10f;
 	public float height = 5f;
 	public float speed = 2f;
+	public float spawnDelay = 0.5f;
 
 	private float xmin;
 	private float xmax;
@@ -15,22 +16,32 @@ public class EnemySpawner : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		SpawnEnemies ();
-    }
-
-	void SpawnEnemies(){
 		float distance = transform.position.z - Camera.main.transform.position.z;
 		Vector3 leftBoundary = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
 		Vector3 rightBoundary = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, distance));
 		xmin = leftBoundary.x;
 		xmax = rightBoundary.x;
+		movingLeft = true;
 
+		SpwanUntilFull ();
+    }
+
+	void SpawnEnemies(){
 		foreach(Transform child in transform){
 			GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
 			enemy.transform.parent = child;
 		}
+	}
 
-		movingLeft = true;
+	void SpwanUntilFull(){
+		Transform freePosition = NextFreePosition ();
+		if(freePosition){
+			GameObject enemy = Instantiate(enemyPrefab, freePosition.position, Quaternion.identity) as GameObject;
+			enemy.transform.parent = freePosition;
+		}
+		if(NextFreePosition()){
+			Invoke ("SpwanUntilFull", spawnDelay);
+		}
 	}
 
 	void OnDrawGizmos(){
@@ -56,9 +67,17 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 		if(AllMembersDead()){
-			Debug.Log("Empty Formation");
-			SpawnEnemies ();
+			SpwanUntilFull ();
 		}
+	}
+
+	Transform NextFreePosition(){
+		foreach(Transform childPositionGameObject in transform){
+			if (childPositionGameObject.childCount == 0) {
+				return childPositionGameObject;
+			}
+		}
+		return null;
 	}
 
 	bool AllMembersDead(){
