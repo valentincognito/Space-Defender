@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50839761305552058}
   - component: {fileID: 60780820372963290}
   - component: {fileID: 114952960248557616}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnnemyShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   laserSpeed: 5
   laserPrefab: {fileID: 1877266312842680, guid: 42183a6303a4a4a3b845f2b78c6bddb2,
     type: 2}
+  shotsPerSeconds: 0.5
 --- !u!212 &212290222368175252
 SpriteRenderer:
   m_ObjectHideFlags: 1

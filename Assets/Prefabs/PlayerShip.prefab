@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114804389071369560}
   - component: {fileID: 60696523158234466}
   - component: {fileID: 50417504337563660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

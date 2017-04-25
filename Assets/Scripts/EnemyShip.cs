@@ -11,7 +11,6 @@ public class EnemyShip : MonoBehaviour {
 
 	void Update(){
 		float probablity = shotsPerSeconds * Time.deltaTime;
-		print (probablity);
 		if(Random.value < probablity){
 			Fire ();
 		}
