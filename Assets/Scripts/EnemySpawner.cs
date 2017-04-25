@@ -15,20 +15,23 @@ public class EnemySpawner : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		SpawnEnemies ();
+    }
 
+	void SpawnEnemies(){
 		float distance = transform.position.z - Camera.main.transform.position.z;
 		Vector3 leftBoundary = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
 		Vector3 rightBoundary = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, distance));
 		xmin = leftBoundary.x;
 		xmax = rightBoundary.x;
-		        
+
 		foreach(Transform child in transform){
 			GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
 			enemy.transform.parent = child;
 		}
 
 		movingLeft = true;
-    }
+	}
 
 	void OnDrawGizmos(){
 		Gizmos.DrawWireCube (transform.position, new Vector3(width, height, 0));
@@ -51,6 +54,20 @@ public class EnemySpawner : MonoBehaviour {
 		}else if(rightEdgeOfFormation > xmax){
 			movingLeft = true;
 		}
+
+		if(AllMembersDead()){
+			Debug.Log("Empty Formation");
+			SpawnEnemies ();
+		}
+	}
+
+	bool AllMembersDead(){
+		foreach(Transform childPositionGameObject in transform){
+			if (childPositionGameObject.childCount > 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
