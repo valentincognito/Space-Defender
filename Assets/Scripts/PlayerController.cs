@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public float firingRate = 0.2f;
 	public float health= 250f;
 	public GameObject laserPrefab;
+	public AudioClip fireSound;
 
     float xmin;
     float xmax;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour {
 		Vector3 offset = new Vector3 (0, 1, 0);
 		GameObject laser = Instantiate(laserPrefab, transform.position + offset, Quaternion.identity) as GameObject;
 		laser.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, laserSpeed, 0);
+
+		AudioSource.PlayClipAtPoint(fireSound, transform.position);
 	}
 
 

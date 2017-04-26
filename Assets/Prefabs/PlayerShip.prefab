@@ -129,6 +129,7 @@ MonoBehaviour:
   health: 250
   laserPrefab: {fileID: 1877266312842680, guid: 6dc59295075a841fead561e16731a783,
     type: 2}
+  fireSound: {fileID: 8300000, guid: 6872dabf300044e428792a7903de4c63, type: 3}
 --- !u!212 &212654804091345700
 SpriteRenderer:
   m_ObjectHideFlags: 1

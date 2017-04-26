@@ -140,6 +140,9 @@ MonoBehaviour:
   laserPrefab: {fileID: 1877266312842680, guid: 42183a6303a4a4a3b845f2b78c6bddb2,
     type: 2}
   shotsPerSeconds: 0.5
+  scoreValue: 150
+  explosion: {fileID: 8300000, guid: 44e646ca046a9437fa4c6f947bfb7d1f, type: 3}
+  fireSound: {fileID: 8300000, guid: 2ac9da35fd97a435686a02051777dccf, type: 3}
 --- !u!212 &212290222368175252
 SpriteRenderer:
   m_ObjectHideFlags: 1
